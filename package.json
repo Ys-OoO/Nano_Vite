@@ -1,6 +1,6 @@
 {
   "name": "nano_vite",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Nano_Vite aims to further understand the inner workings of Vite",
   "main": "src/cli.js",
   "bin": {
