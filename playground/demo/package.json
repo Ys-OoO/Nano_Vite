@@ -1,0 +1,14 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "nano_vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.4"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.4"
+  }
+}
