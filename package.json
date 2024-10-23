@@ -1,17 +1,27 @@
 {
   "name": "nano_vite",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Nano_Vite aims to further understand the inner workings of Vite",
-  "main": "index.js",
+  "main": "src/cli.js",
   "bin": {
     "nano_vite": "bin/nano_vite.js"
   },
   "scripts": {
     "dev": "nano_vite"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "simple",
+    "vite",
+    "nano",
+    "nano_vite"
+  ],
+  "author": "ys0514@yeah.net",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ys-OoO/Nano_Vite"
+  },
+  "homepage": "https://github.com/Ys-OoO/Nano_Vite",
   "dependencies": {
     "es-module-lexer": "^1.5.4",
     "koa": "^2.15.3",
