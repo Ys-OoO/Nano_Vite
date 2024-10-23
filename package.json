@@ -1,0 +1,21 @@
+{
+  "name": "nano_vite",
+  "version": "1.0.0",
+  "description": "Nano_Vite aims to further understand the inner workings of Vite",
+  "main": "index.js",
+  "bin": {
+    "nano_vite": "bin/nano_vite.js"
+  },
+  "scripts": {
+    "dev": "nano_vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es-module-lexer": "^1.5.4",
+    "koa": "^2.15.3",
+    "koa-static": "^5.0.0",
+    "magic-string": "^0.30.12"
+  }
+}
