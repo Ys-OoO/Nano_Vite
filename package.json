@@ -7,7 +7,7 @@
     "nano_vite": "bin/nano_vite.js"
   },
   "scripts": {
-    "dev": "nano_vite"
+    "dev": "npm run dev --prefix playground/demo"
   },
   "keywords": [
     "simple",

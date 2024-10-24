@@ -11,8 +11,11 @@ function createServer(config){
         port: config.port || 3000
     }
 
-    // * 服务需要对源代码进行处理，这些处理被封装为一个个的插件
+    // * 服务需要对源代码/文件进行处理，这些处理被封装为一个个的插件
+    // * 提供静态服务 or HMR or SourceMap or 源代码Rewrite or vue等文件的处理插件等等
+    // * 插件的顺序也需要注意，因为相互之间可能存在影响
     const resolvedPlugins = [
+        require('./moduleRewritePlugin'), // 模块重写插件，"vue" => "/@modules/vue", 重写HMR相关文件，注入import.meta.hot以便于跟踪
         require('./serveStaticPlugin'), // 提供静态服务
     ];
     // 执行插件
