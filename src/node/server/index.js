@@ -15,7 +15,8 @@ function createServer(config){
     // * 提供静态服务 or HMR or SourceMap or 源代码Rewrite or vue等文件的处理插件等等
     // * 插件的顺序也需要注意，因为相互之间可能存在影响
     const resolvedPlugins = [
-        require('./moduleRewritePlugin'), // 模块重写插件，"vue" => "/@modules/vue", 重写HMR相关文件，注入import.meta.hot以便于跟踪
+        require('./moduleRewritePlugin'), // 后处理：模块重写插件，"vue" => "/@modules/vue", 重写HMR相关文件，注入import.meta.hot以便于跟踪
+        require('./moduleResolvePlugin'), // 解析 /@modules/* 导入，提供正确导入
         require('./serveStaticPlugin'), // 提供静态服务
     ];
     // 执行插件

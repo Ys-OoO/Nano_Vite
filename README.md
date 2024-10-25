@@ -2,17 +2,17 @@
 Nano_Vite aims to further understand the inner workings of Vite
 
 # Dev
-In the root directory, run:
+1. In the root directory, run:
 ```bash
 $ npm install
 $ npm link
 ```
-In the `playground/demo` directory, run:
+2. In the `playground/demo` directory, run:
 ```bash
 $ npm install
 $ npm link nano_vite
-# then
+```
+3. In the root directory, run:
+```bash
 $ npm run dev
-# or 
-$ npm run nano_vite
 ```

@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "npm run dev --prefix playground/demo"
   },
+  "type": "commonjs",
   "keywords": [
     "simple",
     "vite",
@@ -26,6 +27,7 @@
     "es-module-lexer": "^1.5.4",
     "koa": "^2.15.3",
     "koa-static": "^5.0.0",
-    "magic-string": "^0.30.12"
+    "magic-string": "^0.30.12",
+    "resolve": "^1.22.8"
   }
 }
