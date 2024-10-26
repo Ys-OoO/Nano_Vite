@@ -8,7 +8,8 @@ function createServer(config){
     const context = {
         root: process.cwd(),// 运行时根目录
         app, // 服务实例
-        port: config.port || 3000
+        port: config.port || 3000,
+        config, // 命令行配置 & 配置文件配置 解析后的配置
     }
 
     // * 服务需要对源代码/文件进行处理，这些处理被封装为一个个的插件

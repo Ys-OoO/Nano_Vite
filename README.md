@@ -1,7 +1,7 @@
 # Nano_Vite
 Nano_Vite aims to further understand the inner workings of Vite
 
-# Dev
+## Dev
 1. In the root directory, run:
 ```bash
 $ npm install
@@ -16,3 +16,8 @@ $ npm link nano_vite
 ```bash
 $ npm run dev
 ```
+
+## TODO
+* resolve alias: need to use @rollup/plugin-alias
+* rewrite vue
+* ...

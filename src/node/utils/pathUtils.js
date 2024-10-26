@@ -11,7 +11,7 @@ try {
   isRunningWithYarnPnp = Boolean(require('pnpapi'))
 } catch {}
 
-// 在root下导入子路径id
+// 在root下寻找子路径id
 const resolveFrom = (root, id) =>
     resolve.sync(id, {
         basedir: root,

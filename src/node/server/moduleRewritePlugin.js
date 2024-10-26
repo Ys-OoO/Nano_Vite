@@ -3,6 +3,9 @@ const { parse } = require('es-module-lexer');
 const { isExternalUrl, isBareUrl } = require('../utils/pathUtils.js');
 const MagicString = require('magic-string');
 
+
+// magic： 简单的将config挂载到全局
+let outerConfig;
 /**
  * 源码注释
  * 用于重写提供的 JavaScript 插件。
@@ -17,8 +20,10 @@ function moduleRewritePlugin(context){
     const {
         root,
         app,
+        config
     } = context;
-    
+
+    outerConfig = config;
     // 注册中间件
     app.use(async (ctx,next)=>{
         // 利用洋葱模型，先让当前请求继续执行后续插件
@@ -35,7 +40,7 @@ function moduleRewritePlugin(context){
         // 修改导入
         if(ctx.body && ctx.response.is('js')){
             const content = await readBody(ctx.body);
-            ctx.body = rewirteImports(root,content,);
+            ctx.body = rewirteImports(root,content);
         }
     })
 }
@@ -72,8 +77,12 @@ function rewirteImports(root,source){
 }
 
 function resolveImport(id){
+    id = outerConfig?.resolve?.alias[id] || id;
+
     if(isBareUrl(id)){
         id = `/@modules/${id}`
+    }else{
+        // TODO：后续可能还需要配置对 query参数的处理
     }
 
     return id;

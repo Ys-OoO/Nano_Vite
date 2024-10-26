@@ -1,4 +1,3 @@
-const { version } = require("os");
 const { lookupFile } = require("./fsUtils");
 const { resolveFrom } = require("./pathUtils");
 const path = require('path');
@@ -12,7 +11,7 @@ function resoleVue(root){
     }
 
     // 从本地package.json中查询
-    let vueBasePath,compilerPath;
+    let vueBasePath, compilerPath;
     const projectPkg = JSON.parse(lookupFile(root,['package.json']) || `{}`);
     let isLocal = !!(projectPkg.dependencies && projectPkg.dependencies.vue);
 

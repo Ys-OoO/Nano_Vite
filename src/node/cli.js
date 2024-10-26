@@ -1,4 +1,11 @@
 const os = require('os');
+const { resolveConfig } = require('./config');
+
+async function resolveOptions() {
+    const config = await resolveConfig();
+
+    return config;
+}
 
 function runServe(options){
     const server = require('./server/index').createServer(options);
@@ -7,7 +14,6 @@ function runServe(options){
 
     server.listen(port,()=>{
         // 打印一些服务运行的信息
-        console.log();
         console.log(" Dev server runing at:");
         const interfaces = os.networkInterfaces();
         Object.keys(interfaces).forEach(key=>{
@@ -27,5 +33,9 @@ function runServe(options){
     })
 }
 
-// pending
-runServe({});
+async function start() {
+    const options = await resolveOptions();
+    runServe(options || {});
+}
+
+start();
